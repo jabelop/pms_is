@@ -47,6 +47,14 @@ class Activity extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_activities', 'activity_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_activities', 'activity_id', 'user_id')->withPivot('rol');
+    }
+
+    /**
+     * The incidences that belong to the activity.
+     */
+    public function incidences()
+    {
+        return $this->hasMany(Incidence::class,'activity_id');
     }
 }

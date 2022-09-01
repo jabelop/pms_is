@@ -48,7 +48,7 @@ class User extends Authenticatable
      */
     public function projects()
     {
-        return $this->belongsToMany(Project::class, 'user_projects', 'user_id', 'project_id');
+        return $this->belongsToMany(Project::class, 'user_projects', 'user_id', 'project_id')->withPivot('name');
     }
 
     /**
@@ -56,6 +56,6 @@ class User extends Authenticatable
      */
     public function activities()
     {
-        return $this->belongsToMany(Activity::class, 'user_activities', 'user_id', 'activity_id');
+        return $this->belongsToMany(Activity::class, 'user_activities', 'user_id', 'activity_id')->withPivot('name');
     }
 }

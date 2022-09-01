@@ -41,4 +41,12 @@ class Incidence extends Model
     protected $casts = [
         
     ];
+
+    /**
+     * The incidences that belong to the activity.
+     */
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class,'activity_id');
+    }
 }

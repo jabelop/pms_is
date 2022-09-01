@@ -46,6 +46,14 @@ class Project extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_projects', 'project_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_projects', 'project_id', 'user_id')->withPivot('rol');
+    }
+
+    /**
+     * The activities that belong to the project.
+     */
+    public function activities()
+    {
+        return $this->hasMany(Activity::class,'project_id');
     }
 }
