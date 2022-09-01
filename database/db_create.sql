@@ -96,7 +96,7 @@ DROP TABLE IF EXISTS `user_activities`;
 CREATE TABLE `user_activities` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `project_id` int(11) NOT NULL,
+  `activity_id` int(11) NOT NULL,
   `rol` enum('responsable','participante') NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
